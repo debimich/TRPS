@@ -1,0 +1,95 @@
+/* Основные стили */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+/* Заголовок */
+h1 {
+	font-size: 2rem;
+	color: #222;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Форма ввода */
+form {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	font-size: 1rem;
+	margin-bottom: 10px;
+	color: #555;
+}
+
+input[type="text"] {
+	width: 100%;
+	max-width: 400px;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #4caf50;
+	color: white;
+	padding: 10px 20px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+/* Контейнер для изображения */
+#result {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#result img {
+	max-width: 100%;
+	height: auto;
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопка загрузки */
+button.download-btn {
+	background-color: #007bff;
+	margin-top: 20px;
+}
+
+button.download-btn:hover {
+	background-color: #0056b3;
+}
+
+.error-message {
+	color: red;
+	font-weight: bold;
+	margin: 10px 0;
+}

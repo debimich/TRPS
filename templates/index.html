@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Построение логической схемы</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+	<h1>Построение логической схемы по булевой функции</h1>
+
+	<form method="POST">
+		<label for="expression">Введите булеву функцию:</label>
+		<input type="text" id="expression" name="expression" required value="{{ expression if not error else '' }}">
+		<button type="submit">Построить</button>
+	</form>
+
+	{% if error %}
+	<div class="error-message">
+		{{ error }}
+	</div>
+	{% endif %}
+
+	<div id="result">
+		{% if image_url %}
+		<h2>Результат:</h2>
+		<img src="{{ image_url }}" alt="Схема логической функции" style="max-width: 100%; height: auto;">
+		<div style="margin-top: 10px; margin-bottom: 20px;">
+			<button onclick="downloadImage()">Скачать схему</button>
+		</div>
+		{% else %}
+		<p>Введите функцию, чтобы увидеть результат.</p>
+		{% endif %}
+	</div>
+
+	<script>
+		function downloadImage() {
+			const imageUrl = "{{ image_url }}";
+			if (imageUrl) {
+				const link = document.createElement('a');
+				link.href = imageUrl;
+				link.download = 'circuit.png';
+				link.click();
+			} else {
+				alert("Сначала построите схему, чтобы скачать изображение.");
+			}
+		}
+	</script>
+</body>
+
+</html>
